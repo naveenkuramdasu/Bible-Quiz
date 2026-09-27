@@ -2144,3 +2144,70 @@ img {
       14px;
   }
 }
+
+/* =========================================================
+   FINAL MOBILE BACKGROUND POSITION — KEEP ALL OTHER STYLES
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .home-page::before {
+    inset: -28px;
+
+    background-image: url("/nav.png");
+    background-size: auto 115%;
+    background-position: 68% center;
+    background-repeat: no-repeat;
+
+    opacity: 0.24;
+    filter: blur(5px);
+    transform: scale(1.035);
+  }
+
+  .home-page::after {
+    inset: 0;
+
+    background:
+      radial-gradient(
+        ellipse at 82% 28%,
+        rgba(236, 201, 114, 0.12),
+        transparent 30%
+      ),
+      radial-gradient(
+        ellipse at 35% 18%,
+        rgba(58, 174, 177, 0.08),
+        transparent 34%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(2, 7, 8, 0.69) 0%,
+        rgba(2, 8, 9, 0.56) 42%,
+        rgba(1, 4, 5, 0.83) 100%
+      );
+  }
+}
+
+@media (max-width: 430px) {
+  .home-page::before {
+    background-size: auto 108%;
+    background-position: 71% center;
+
+    opacity: 0.22;
+    filter: blur(5px);
+    transform: scale(1.04);
+  }
+
+  .home-page::after {
+    background:
+      radial-gradient(
+        ellipse at 85% 25%,
+        rgba(235, 199, 111, 0.10),
+        transparent 30%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(2, 7, 8, 0.73) 0%,
+        rgba(2, 8, 9, 0.62) 48%,
+        rgba(1, 4, 5, 0.88) 100%
+      );
+  }
+}
