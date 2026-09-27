@@ -41,7 +41,9 @@ function Home({
         </div>
 
         <h1>
-          జీవము గల తండ్రి సన్నిధి
+    <h1>
+  జీవముగల దేవుని సంఘము
+</h1>
         </h1>
 
         <p className="home-subtitle">

@@ -115,36 +115,42 @@
 
   min-width: 0;
 }
-
 /* =========================================================
-   LOGO
+   LARGE BRAND LOGO
    ========================================================= */
 
 .brand-logo-wrap {
   position: relative;
 
-  width: 68px;
-  height: 68px;
-
-  flex-shrink: 0;
+  width: 94px;
+  height: 94px;
 
   padding: 3px;
+
+  flex-shrink: 0;
 
   border-radius: 50%;
 
   background:
     conic-gradient(
-      from 25deg,
-      #6f4b1c,
-      #e4c982,
-      #8d6327,
-      #f1da95,
-      #6f4b1c
+      from 20deg,
+      #72521f,
+      #f1d998,
+      #9c722e,
+      #d9ba6f,
+      #6c4c1d,
+      #f0d694
     );
 
   box-shadow:
-    0 0 0 4px rgba(229, 195, 116, 0.055),
-    0 10px 30px rgba(0, 0, 0, 0.40);
+    0 0 0 5px
+      rgba(232, 202, 130, 0.07),
+
+    0 14px 38px
+      rgba(0, 0, 0, 0.50),
+
+    0 0 28px
+      rgba(221, 186, 101, 0.08);
 }
 
 .brand-logo-wrap::before {
@@ -152,34 +158,35 @@
 
   position: absolute;
 
-  inset: -6px;
+  inset: -7px;
 
   border-radius: 50%;
 
   border:
-    1px solid rgba(
-      225,
-      194,
-      117,
-      0.18
-    );
+    1px solid
+    rgba(228, 194, 113, 0.22);
+
+  box-shadow:
+    0 0 22px
+    rgba(218, 184, 104, 0.08);
 
   pointer-events: none;
 }
 
 .brand-logo {
-  display: block;
-
   width: 100%;
   height: 100%;
+
+  display: block;
 
   object-fit: cover;
 
   border-radius: 50%;
 
-  background: #0a1114;
-}
+  background: #071012;
 
+  opacity: 1;
+}
 /* =========================================================
    BRAND TEXT
    ========================================================= */
@@ -203,8 +210,7 @@
 
   letter-spacing: 1.6px;
 }
-
-.brand-text h1 {
+.brand-copy h1 {
   margin: 0;
 
   white-space: nowrap;
@@ -213,29 +219,24 @@
 
   text-overflow: ellipsis;
 
-  color: #f5eee0;
+  color: #f2ecdf;
 
-  font-size:
-    clamp(20px, 3.2vw, 32px);
+  font-family:
+    "Noto Sans Telugu",
+    "Nirmala UI",
+    sans-serif;
 
-  line-height: 1.15;
+  font-size: clamp(21px, 3vw, 32px);
 
-  font-weight: 950;
+  line-height: 1.35;
 
-  letter-spacing: -0.5px;
+  font-weight: 800;
+
+  letter-spacing: 0;
 
   text-shadow:
-    0 2px 20px rgba(0, 0, 0, 0.30);
-}
-
-.brand-text p {
-  margin: 4px 0 0;
-
-  color: #8d9a9d;
-
-  font-size: 10px;
-
-  letter-spacing: 0.8px;
+    0 4px 18px
+    rgba(0, 0, 0, 0.28);
 }
 
 /* =========================================================
@@ -472,6 +473,126 @@
   }
 
   .header-status {
+    display: none;
+  }
+}
+/* =========================================================
+   MOBILE-FIRST HEADER
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .site-header {
+    width: 100%;
+  }
+
+  .header-shell {
+    min-height: 82px;
+
+    padding: 9px 11px;
+
+    border-radius: 18px;
+
+    gap: 10px;
+  }
+
+  .brand-area {
+    width: 100%;
+
+    gap: 12px;
+  }
+
+  .brand-logo-wrap {
+    width: 62px;
+    height: 62px;
+
+    padding: 3px;
+
+    box-shadow:
+      0 0 0 4px
+        rgba(232, 202, 130, 0.06),
+      0 8px 25px
+        rgba(0, 0, 0, 0.42);
+  }
+
+  .brand-copy {
+    flex: 1;
+
+    min-width: 0;
+  }
+
+  .brand-kicker {
+    font-size: 6.5px;
+
+    letter-spacing: 1.15px;
+  }
+
+  .brand-copy h1 {
+    font-size: 17px;
+
+    line-height: 1.28;
+
+    white-space: normal;
+
+    overflow: visible;
+
+    text-overflow: unset;
+  }
+
+  .brand-copy p {
+    margin-top: 2px;
+
+    font-size: 7px;
+
+    letter-spacing: 0.4px;
+  }
+
+  .event-pill {
+    display: none;
+  }
+
+  .header-divider {
+    margin-top: 5px;
+  }
+
+  .header-divider::before {
+    left: 12%;
+    right: 12%;
+  }
+}
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 430px) {
+
+  .header-shell {
+    min-height: 76px;
+
+    padding: 8px 9px;
+
+    border-radius: 16px;
+  }
+
+  .brand-logo-wrap {
+    width: 55px;
+    height: 55px;
+  }
+
+  .brand-area {
+    gap: 10px;
+  }
+
+  .brand-kicker {
+    font-size: 6px;
+  }
+
+  .brand-copy h1 {
+    font-size: 15px;
+  }
+
+  .brand-copy p {
     display: none;
   }
 }
