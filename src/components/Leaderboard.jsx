@@ -177,7 +177,7 @@ function Leaderboard({ onBack }) {
 
         <div>
           <div className="eyebrow">
-            జీవము గల తండ్రి సన్నిధి
+            జీవముగల దేవుని సంఘము
           </div>
 
           <h1>

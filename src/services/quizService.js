@@ -25,7 +25,7 @@ import { auth, db } from "../firebase";
           One submission per Firebase
           anonymous account.
 */
-export const DEMO_MODE = true;
+export const DEMO_MODE = false;
 
 /*
   Unique quiz identifier.

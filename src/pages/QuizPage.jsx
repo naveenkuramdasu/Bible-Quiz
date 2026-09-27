@@ -24,7 +24,7 @@ import "../styles/quiz.css";
            one submission per Firebase user
 */
 const ENABLE_SUBMISSION_LOCK =
-  false;
+  true;
 
 const SUBMISSION_KEY =
   "bibleQuizSubmitted";
