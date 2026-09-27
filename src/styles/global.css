@@ -2211,3 +2211,18 @@ img {
       );
   }
 }
+@media (max-width: 700px) {
+  .home-page::before {
+    opacity: 0.30;
+    filter: blur(3px);
+    background-position: 66% center;
+  }
+}
+
+@media (max-width: 430px) {
+  .home-page::before {
+    opacity: 0.28;
+    filter: blur(3px);
+    background-position: 68% center;
+  }
+}
