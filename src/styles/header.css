@@ -1,0 +1,477 @@
+/* =========================================================
+   BIBLE QUIZ 2026
+   CINEMATIC HEADER
+   ========================================================= */
+
+.site-header {
+  width: 100%;
+
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  position: relative;
+
+  z-index: 10;
+}
+
+/* =========================================================
+   HEADER SHELL
+   ========================================================= */
+
+.header-shell {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 24px;
+
+  min-height: 92px;
+
+  padding: 14px 17px 14px 14px;
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      110deg,
+      rgba(10, 16, 19, 0.96),
+      rgba(13, 31, 33, 0.90) 55%,
+      rgba(9, 15, 18, 0.97)
+    );
+
+  border:
+    1px solid rgba(196, 159, 85, 0.20);
+
+  box-shadow:
+    0 22px 60px rgba(0, 0, 0, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+  overflow: hidden;
+}
+
+/* cinematic glow */
+
+.header-shell::before {
+  content: "";
+
+  position: absolute;
+
+  width: 250px;
+  height: 250px;
+
+  left: -110px;
+  top: -90px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(17, 140, 151, 0.12);
+
+  filter: blur(70px);
+
+  pointer-events: none;
+}
+
+.header-shell::after {
+  content: "";
+
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  right: -90px;
+  bottom: -110px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(206, 164, 75, 0.08);
+
+  filter: blur(60px);
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.brand-area {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  min-width: 0;
+}
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.brand-logo-wrap {
+  position: relative;
+
+  width: 68px;
+  height: 68px;
+
+  flex-shrink: 0;
+
+  padding: 3px;
+
+  border-radius: 50%;
+
+  background:
+    conic-gradient(
+      from 25deg,
+      #6f4b1c,
+      #e4c982,
+      #8d6327,
+      #f1da95,
+      #6f4b1c
+    );
+
+  box-shadow:
+    0 0 0 4px rgba(229, 195, 116, 0.055),
+    0 10px 30px rgba(0, 0, 0, 0.40);
+}
+
+.brand-logo-wrap::before {
+  content: "";
+
+  position: absolute;
+
+  inset: -6px;
+
+  border-radius: 50%;
+
+  border:
+    1px solid rgba(
+      225,
+      194,
+      117,
+      0.18
+    );
+
+  pointer-events: none;
+}
+
+.brand-logo {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  background: #0a1114;
+}
+
+/* =========================================================
+   BRAND TEXT
+   ========================================================= */
+
+.brand-text {
+  min-width: 0;
+}
+
+.brand-kicker {
+  display: inline-flex;
+
+  align-items: center;
+
+  margin-bottom: 4px;
+
+  color: #c9b16e;
+
+  font-size: 9px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.6px;
+}
+
+.brand-text h1 {
+  margin: 0;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  color: #f5eee0;
+
+  font-size:
+    clamp(20px, 3.2vw, 32px);
+
+  line-height: 1.15;
+
+  font-weight: 950;
+
+  letter-spacing: -0.5px;
+
+  text-shadow:
+    0 2px 20px rgba(0, 0, 0, 0.30);
+}
+
+.brand-text p {
+  margin: 4px 0 0;
+
+  color: #8d9a9d;
+
+  font-size: 10px;
+
+  letter-spacing: 0.8px;
+}
+
+/* =========================================================
+   EVENT STATUS
+   ========================================================= */
+
+.header-status {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 9px 12px;
+
+  border-radius: 13px;
+
+  background:
+    rgba(
+      7,
+      27,
+      25,
+      0.72
+    );
+
+  border:
+    1px solid rgba(
+      74,
+      190,
+      135,
+      0.20
+    );
+
+  flex-shrink: 0;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #66d89a;
+
+  box-shadow:
+    0 0 8px rgba(
+      102,
+      216,
+      154,
+      0.95
+    ),
+    0 0 18px rgba(
+      102,
+      216,
+      154,
+      0.38
+    );
+}
+
+.status-text span {
+  display: block;
+
+  color: #6f827d;
+
+  font-size: 7px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.3px;
+}
+
+.status-text strong {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #a8eac3;
+
+  font-size: 9px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.8px;
+}
+
+/* =========================================================
+   DECORATIVE LINE
+   ========================================================= */
+
+.header-line {
+  position: relative;
+
+  height: 7px;
+
+  margin-top: 8px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.header-line::before {
+  content: "";
+
+  position: absolute;
+
+  left: 5%;
+
+  right: 5%;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(
+        202,
+        170,
+        93,
+        0.18
+      ) 20%,
+      rgba(
+        202,
+        170,
+        93,
+        0.35
+      ) 50%,
+      rgba(
+        202,
+        170,
+        93,
+        0.18
+      ) 80%,
+      transparent
+    );
+}
+
+.header-line span {
+  position: relative;
+
+  z-index: 2;
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #d8bb73;
+
+  box-shadow:
+    0 0 9px
+    rgba(
+      216,
+      187,
+      115,
+      0.55
+    );
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .header-shell {
+    min-height: 78px;
+
+    padding: 10px 11px;
+
+    border-radius: 18px;
+
+    gap: 10px;
+  }
+
+  .brand-area {
+    gap: 11px;
+  }
+
+  .brand-logo-wrap {
+    width: 55px;
+    height: 55px;
+  }
+
+  .brand-kicker {
+    font-size: 7px;
+
+    letter-spacing: 1.1px;
+  }
+
+  .brand-text h1 {
+    font-size: 18px;
+  }
+
+  .brand-text p {
+    font-size: 8px;
+
+    letter-spacing: 0.5px;
+  }
+
+  .header-status {
+    padding: 7px 8px;
+  }
+
+  .status-text strong {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 470px) {
+
+  .header-shell {
+    padding: 9px;
+  }
+
+  .brand-logo-wrap {
+    width: 49px;
+    height: 49px;
+  }
+
+  .brand-text h1 {
+    font-size: 16px;
+  }
+
+  .brand-text p {
+    display: none;
+  }
+
+  .header-status {
+    display: none;
+  }
+}

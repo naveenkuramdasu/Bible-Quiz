@@ -1,0 +1,681 @@
+/* =========================================================
+   BIBLE QUIZ
+   Leaderboard Styles
+   ========================================================= */
+
+.leaderboard-page {
+  width: 100%;
+  max-width: 950px;
+
+  margin: 0 auto;
+}
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+.leaderboard-heading {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 20px;
+
+  margin-bottom: 20px;
+
+  padding: 10px 3px;
+}
+
+.leaderboard-heading h1 {
+  margin: 6px 0 5px;
+
+  font-size: clamp(30px, 5vw, 44px);
+
+  line-height: 1;
+
+  font-weight: 950;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ffffff,
+      #ddc7ff,
+      #efdca9
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+.leaderboard-heading p {
+  margin: 0;
+
+  color: #8e8498;
+
+  font-size: 12px;
+}
+
+.leaderboard-symbol {
+  width: 70px;
+  height: 70px;
+
+  display: grid;
+  place-items: center;
+
+  flex-shrink: 0;
+
+  border-radius: 22px;
+
+  color: #ebd294;
+
+  font-size: 30px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(239, 211, 141, 0.12),
+      rgba(139, 92, 246, 0.08)
+    );
+
+  border:
+    1px solid
+    rgba(239, 211, 141, 0.18);
+
+  box-shadow:
+    0 15px 40px
+    rgba(0, 0, 0, 0.22);
+}
+
+/* =========================================================
+   RANKING RULE
+   ========================================================= */
+
+.ranking-rule {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 10px;
+
+  margin-bottom: 15px;
+}
+
+.ranking-rule-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 14px 15px;
+
+  border-radius: 16px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.04
+    );
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.08
+    );
+}
+
+.ranking-rule-item > span {
+  width: 30px;
+  height: 30px;
+
+  display: grid;
+  place-items: center;
+
+  flex-shrink: 0;
+
+  border-radius: 9px;
+
+  color: #c4a6ff;
+
+  background:
+    rgba(
+      139,
+      92,
+      246,
+      0.10
+    );
+
+  font-size: 9px;
+
+  font-weight: 900;
+}
+
+.ranking-rule-item strong {
+  display: block;
+
+  color: #d5ccde;
+
+  font-size: 11px;
+}
+
+.ranking-rule-item p {
+  margin: 3px 0 0;
+
+  color: #776c82;
+
+  font-size: 9px;
+
+  line-height: 1.4;
+}
+
+/* =========================================================
+   MAIN LEADERBOARD CARD
+   ========================================================= */
+
+.leaderboard-card {
+  overflow: hidden;
+
+  border-radius: 23px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(
+        255,
+        255,
+        255,
+        0.075
+      ),
+      rgba(
+        255,
+        255,
+        255,
+        0.03
+      )
+    );
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.11
+    );
+
+  box-shadow:
+    0 25px 75px
+    rgba(0, 0, 0, 0.26);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+/* =========================================================
+   TABLE HEADER
+   ========================================================= */
+
+.leaderboard-header-row {
+  display: grid;
+
+  grid-template-columns:
+    80px 1fr 130px 120px;
+
+  gap: 10px;
+
+  padding: 14px 20px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.025
+    );
+
+  border-bottom:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.07
+    );
+
+  color: #71677c;
+
+  font-size: 9px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.2px;
+}
+
+/* =========================================================
+   ROW
+   ========================================================= */
+
+.leaderboard-row {
+  display: grid;
+
+  grid-template-columns:
+    80px 1fr 130px 120px;
+
+  gap: 10px;
+
+  align-items: center;
+
+  min-height: 70px;
+
+  padding: 12px 20px;
+
+  border-bottom:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.055
+    );
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.leaderboard-row:last-child {
+  border-bottom: 0;
+}
+
+.leaderboard-row:hover {
+  background:
+    rgba(
+      139,
+      92,
+      246,
+      0.045
+    );
+}
+
+/* =========================================================
+   TOP 3
+   ========================================================= */
+
+.leaderboard-row.top-1,
+.leaderboard-row.rank-gold {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(
+        239,
+        211,
+        141,
+        0.08
+      ),
+      transparent
+    );
+}
+
+.leaderboard-row.rank-silver {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(
+        220,
+        225,
+        236,
+        0.055
+      ),
+      transparent
+    );
+}
+
+.leaderboard-row.rank-bronze {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(
+        216,
+        154,
+        112,
+        0.055
+      ),
+      transparent
+    );
+}
+
+/* =========================================================
+   RANK
+   ========================================================= */
+
+.rank-cell {
+  display: flex;
+
+  align-items: center;
+}
+
+.rank-cell span {
+  min-width: 34px;
+
+  font-size: 20px;
+
+  font-weight: 950;
+}
+
+.rank-gold .rank-cell span {
+  filter:
+    drop-shadow(
+      0 0 10px
+      rgba(
+        239,
+        211,
+        141,
+        0.25
+      )
+    );
+}
+
+/* =========================================================
+   PARTICIPANT
+   ========================================================= */
+
+.participant-cell {
+  min-width: 0;
+}
+
+.participant-cell strong {
+  display: block;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+
+  color: #e8e0ef;
+
+  font-size: 13px;
+
+  font-weight: 850;
+}
+
+.participant-cell span {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #71677b;
+
+  font-size: 9px;
+}
+
+/* =========================================================
+   SCORE
+   ========================================================= */
+
+.score-cell {
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 4px;
+}
+
+.score-cell strong {
+  color: #e0d2ed;
+
+  font-size: 20px;
+
+  font-weight: 950;
+}
+
+.score-cell span {
+  color: #756b80;
+
+  font-size: 10px;
+}
+
+/* =========================================================
+   TIME
+   ========================================================= */
+
+.time-cell {
+  color: #bca9d2;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  font-variant-numeric:
+    tabular-nums;
+}
+
+/* =========================================================
+   EMPTY
+   ========================================================= */
+
+.leaderboard-empty {
+  padding: 60px 25px;
+
+  text-align: center;
+}
+
+.empty-icon {
+  width: 62px;
+  height: 62px;
+
+  display: grid;
+  place-items: center;
+
+  margin: 0 auto 13px;
+
+  border-radius: 18px;
+
+  background:
+    rgba(
+      139,
+      92,
+      246,
+      0.08
+    );
+
+  border:
+    1px solid
+    rgba(
+      168,
+      117,
+      255,
+      0.12
+    );
+
+  font-size: 25px;
+}
+
+.leaderboard-empty h3 {
+  margin: 0 0 5px;
+
+  color: #d7cedf;
+
+  font-size: 16px;
+}
+
+.leaderboard-empty p {
+  max-width: 300px;
+
+  margin: 0 auto;
+
+  color: #716779;
+
+  font-size: 10px;
+
+  line-height: 1.6;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.leaderboard-footer {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-top: 15px;
+}
+
+.leaderboard-back {
+  padding: 11px 15px;
+
+  border-radius: 12px;
+
+  color: #d6ccdf;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.055
+    );
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.10
+    );
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+.leaderboard-footer > span {
+  color: #655b6e;
+
+  font-size: 9px;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .leaderboard-heading {
+    align-items: flex-start;
+  }
+
+  .leaderboard-heading h1 {
+    font-size: 32px;
+  }
+
+  .leaderboard-symbol {
+    width: 56px;
+    height: 56px;
+
+    border-radius: 17px;
+
+    font-size: 24px;
+  }
+
+  .ranking-rule {
+    grid-template-columns: 1fr;
+  }
+
+  .leaderboard-header-row,
+  .leaderboard-row {
+    grid-template-columns:
+      50px 1fr 75px 70px;
+
+    padding-left: 13px;
+    padding-right: 13px;
+  }
+
+  .leaderboard-header-row {
+    font-size: 8px;
+  }
+
+  .leaderboard-row {
+    min-height: 64px;
+  }
+
+  .participant-cell strong {
+    font-size: 12px;
+  }
+
+  .score-cell strong {
+    font-size: 17px;
+  }
+
+  .time-cell {
+    font-size: 11px;
+  }
+
+  .rank-cell span {
+    font-size: 17px;
+  }
+
+  .leaderboard-footer {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    text-align: center;
+  }
+
+  .leaderboard-back {
+    width: 100%;
+  }
+}
+
+@media (max-width: 430px) {
+
+  .leaderboard-heading {
+    margin-bottom: 15px;
+  }
+
+  .leaderboard-heading p {
+    font-size: 10px;
+  }
+
+  .ranking-rule-item {
+    padding: 12px;
+  }
+
+  .leaderboard-header-row,
+  .leaderboard-row {
+    grid-template-columns:
+      42px 1fr 62px 58px;
+
+    gap: 6px;
+  }
+
+  .participant-cell span {
+    font-size: 8px;
+  }
+
+  .score-cell span {
+    font-size: 8px;
+  }
+
+  .time-cell {
+    font-size: 10px;
+  }
+}
