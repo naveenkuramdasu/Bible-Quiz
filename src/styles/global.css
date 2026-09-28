@@ -1681,7 +1681,7 @@ img {
     center center /
     cover no-repeat;
 
-  opacity: 0.30;
+  opacity: 0.23;
 
   filter: blur(5px);
 
@@ -1753,7 +1753,7 @@ img {
   /*
     More visible than before
   */
-  opacity: 4.0;
+  opacity: 2.0;
 
   /*
     Still soft, but not overly blurred
@@ -1829,7 +1829,7 @@ img {
 
   /* Background becomes softer */
   .home-page::before {
-    opacity: 0.25;
+    opacity: 0.18;
 
     filter: blur(6px);
 
@@ -2158,7 +2158,7 @@ img {
     background-position: 68% center;
     background-repeat: no-repeat;
 
-    opacity: 0.30;
+    opacity: 0.34;
     filter: blur(5px);
     transform: scale(1.035);
   }
@@ -2191,7 +2191,7 @@ img {
     background-size: auto 108%;
     background-position: 71% center;
 
-    opacity: 0.30;
+    opacity: 0.32;
     filter: blur(5px);
     transform: scale(1.04);
   }
@@ -2232,7 +2232,7 @@ img {
   background-size: cover;
   background-position: center 48%;
 
-  opacity: 0.30;
+  opacity: 0.38;
 
   /* Light blur — keeps the Bible, cross and light visible
      while preventing the background from overpowering text. */
@@ -2262,9 +2262,9 @@ img {
     ),
     linear-gradient(
       180deg,
-      rgba(2, 7, 8, 0.54) 0%,
-      rgba(2, 8, 9, 0.48) 42%,
-      rgba(1, 4, 5, 0.72) 100%
+      rgba(2, 7, 8, 0.42) 0%,
+      rgba(2, 8, 9, 0.36) 42%,
+      rgba(1, 4, 5, 0.58) 100%
     );
 }
 
@@ -2276,7 +2276,7 @@ img {
     background-size: cover;
     background-position: 56% center;
 
-    opacity: 0.30;
+    opacity: 0.34;
     filter: blur(2.5px);
     transform: scale(1.025);
   }
@@ -2290,9 +2290,9 @@ img {
       ),
       linear-gradient(
         180deg,
-        rgba(2, 7, 8, 0.63) 0%,
-        rgba(2, 8, 9, 0.55) 45%,
-        rgba(1, 4, 5, 0.82) 100%
+        rgba(2, 7, 8, 0.50) 0%,
+        rgba(2, 8, 9, 0.42) 45%,
+        rgba(1, 4, 5, 0.68) 100%
       );
   }
 }
@@ -2301,7 +2301,7 @@ img {
 @media (max-width: 430px) {
   .home-page::before {
     background-position: 57% center;
-    opacity: 0.30;
+    opacity: 0.32;
     filter: blur(2.25px);
   }
 
@@ -2314,64 +2314,95 @@ img {
       ),
       linear-gradient(
         180deg,
-        rgba(2, 7, 8, 0.67) 0%,
-        rgba(2, 8, 9, 0.59) 48%,
-        rgba(1, 4, 5, 0.86) 100%
+        rgba(2, 7, 8, 0.54) 0%,
+        rgba(2, 8, 9, 0.46) 48%,
+        rgba(1, 4, 5, 0.72) 100%
       );
   }
 }
-/* =========================================================
-   FINAL MOBILE BACKGROUND — FULL IMAGE FIT
-   ========================================================= */
 
+
+/* =========================================================
+   FINAL EXTRA-LIGHT MOBILE NAV.PNG
+   ========================================================= */
 @media (max-width: 700px) {
   .home-page::before {
-    inset: 0;
-
-    background-image: url("/nav.png");
-    background-repeat: no-repeat;
-
-    /* Full image visible — no left/right crop */
-    background-size: 100% auto;
-    background-position: center top;
-
-    background-color: #030708;
-
-    opacity: 0.48;
-    filter: blur(1.5px);
-
-    transform: none;
+    opacity: 0.50;
+    filter: blur(1.5px) brightness(1.28);
   }
 
   .home-page::after {
-    inset: 0;
-
     background:
+      radial-gradient(
+        ellipse at 70% 24%,
+        rgba(236, 201, 114, 0.06),
+        transparent 28%
+      ),
       linear-gradient(
         180deg,
-        rgba(2, 7, 8, 0.42) 0%,
-        rgba(2, 8, 9, 0.50) 40%,
-        rgba(1, 4, 5, 0.72) 100%
+        rgba(2, 7, 8, 0.24) 0%,
+        rgba(2, 8, 9, 0.28) 42%,
+        rgba(1, 4, 5, 0.48) 100%
       );
   }
 }
 
 @media (max-width: 430px) {
   .home-page::before {
-    background-size: 100% auto;
-    background-position: center top;
-
-    opacity: 0.32;
-    filter: blur(2px);
+    opacity: 0.47;
+    filter: blur(1.5px) brightness(1.28);
   }
 
   .home-page::after {
     background:
       linear-gradient(
         180deg,
-        rgba(2, 7, 8, 0.47) 0%,
-        rgba(2, 8, 9, 0.55) 40%,
-        rgba(1, 4, 5, 0.76) 100%
+        rgba(2, 7, 8, 0.27) 0%,
+        rgba(2, 8, 9, 0.32) 45%,
+        rgba(1, 4, 5, 0.52) 100%
+      );
+  }
+}
+
+/* =========================================================
+   FINAL ULTRA BRIGHT MOBILE BACKGROUND
+   Only the mobile /nav.png background is changed.
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .home-page::before {
+    opacity: 0.72;
+    filter: blur(1px) brightness(1.10);
+    background-size: 100% auto;
+    background-position: center top;
+  }
+
+  .home-page::after {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(2, 7, 8, 0.10) 0%,
+        rgba(2, 8, 9, 0.16) 38%,
+        rgba(1, 4, 5, 0.30) 100%
+      );
+  }
+}
+
+@media (max-width: 430px) {
+  .home-page::before {
+    opacity: 0.68;
+    filter: blur(1px) brightness(1.10);
+    background-size: 100% auto;
+    background-position: center top;
+  }
+
+  .home-page::after {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(2, 7, 8, 0.14) 0%,
+        rgba(2, 8, 9, 0.20) 38%,
+        rgba(1, 4, 5, 0.34) 100%
       );
   }
 }
