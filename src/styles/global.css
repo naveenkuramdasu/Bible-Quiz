@@ -2320,3 +2320,58 @@ img {
       );
   }
 }
+/* =========================================================
+   FINAL MOBILE BACKGROUND — FULL IMAGE FIT
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .home-page::before {
+    inset: 0;
+
+    background-image: url("/nav.png");
+    background-repeat: no-repeat;
+
+    /* Full image visible — no left/right crop */
+    background-size: 100% auto;
+    background-position: center top;
+
+    background-color: #030708;
+
+    opacity: 0.34;
+    filter: blur(2px);
+
+    transform: none;
+  }
+
+  .home-page::after {
+    inset: 0;
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(2, 7, 8, 0.42) 0%,
+        rgba(2, 8, 9, 0.50) 40%,
+        rgba(1, 4, 5, 0.72) 100%
+      );
+  }
+}
+
+@media (max-width: 430px) {
+  .home-page::before {
+    background-size: 100% auto;
+    background-position: center top;
+
+    opacity: 0.32;
+    filter: blur(2px);
+  }
+
+  .home-page::after {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(2, 7, 8, 0.47) 0%,
+        rgba(2, 8, 9, 0.55) 40%,
+        rgba(1, 4, 5, 0.76) 100%
+      );
+  }
+}
