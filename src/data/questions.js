@@ -64,5 +64,70 @@ export const questions = [
     ],
     answer: 3,
     difficulty: "Easy"
+  },
+
+  {
+    id: 6,
+    question: "బైబిల్ గ్రంథములో ఎన్ని పుస్తకాలు ఉన్నాయి",
+    options: [
+      "56",
+      "66",
+      "76",
+      "77"
+    ],
+    answer: 1,
+    difficulty: "Easy"
+  },
+
+  {
+    id: 7,
+    question: "పాతనిబంధనకు, క్రొత్త నిబంధనకు మధ్య సమయం ఎంత ?",
+    options: [
+      "430",
+      "365",
+      "400",
+      "70"
+    ],
+    answer: 2,
+    difficulty: "Easy"
+  },
+
+  {
+    id: 8,
+    question: "షేతు ఎవరి కుమారుడు..?",
+    options: [
+      "కయ్యిను",
+      "నోవహు",
+      "మెతుషేల",
+      "ఆదాము"
+    ],
+    answer: 3,
+    difficulty: "Easy"
+  },
+
+  {
+    id: 9,
+    question: "ఇశ్రాయేలీయులు ఐగుప్తులో ఎన్ని సంవత్సరాలు ఉన్నారు",
+    options: [
+      "430",
+      "70",
+      "450",
+      "40"
+    ],
+    answer: 0,
+    difficulty: "Easy"
+  },
+
+  {
+    id: 10,
+    question: "కనాను నుండి ఎంతమంది ఐగుప్తు కు వెళ్ళారు..?",
+    options: [
+      "70",
+      "66",
+      "49",
+      "600000"
+    ],
+    answer: 0,
+    difficulty: "Easy"
   }
 ];
