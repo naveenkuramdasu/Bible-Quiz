@@ -18,14 +18,14 @@ import { auth, db } from "../firebase";
   QUIZ MODE
   =========================================
 
-  true  = Testing mode
+  true  = DEMO / TESTING MODE
           Multiple submissions allowed.
 
-  false = Final event mode
+  false = FINAL EVENT MODE
           One submission per Firebase
           anonymous account.
 */
-export const DEMO_MODE = false;
+export const DEMO_MODE = true;
 
 /*
   Unique quiz identifier.
@@ -189,8 +189,14 @@ export async function submitQuizResult({
     );
 
     /*
-      TESTING MODE
-      Every submission gets a new document.
+      =========================================
+      DEMO / TESTING MODE
+      =========================================
+
+      Every submission creates a NEW
+      Firestore document.
+
+      Multiple submissions are allowed.
     */
     if (DEMO_MODE) {
       const resultRef =
@@ -203,7 +209,7 @@ export async function submitQuizResult({
         );
 
       console.log(
-        "✅ FIRESTORE SAVE SUCCESS:",
+        "✅ DEMO RESULT SAVED:",
         resultRef.id
       );
 
@@ -214,10 +220,12 @@ export async function submitQuizResult({
     }
 
     /*
-      FINAL MODE
-      UID-based document can be used
-      together with strict Firestore rules
-      to prevent editing/re-submission.
+      =========================================
+      FINAL EVENT MODE
+      =========================================
+
+      One document is created for each
+      Firebase anonymous user.
     */
 
     const {
