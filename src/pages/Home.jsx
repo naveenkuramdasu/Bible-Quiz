@@ -40,11 +40,11 @@ function Home({
           <span className="kicker-line"></span>
         </div>
 
-        <h1>
+
     <h1>
   జీవముగల దేవుని సంఘము
 </h1>
-        </h1>
+        
 
         <p className="home-subtitle">
           Test your knowledge of the Word,
