@@ -3,11 +3,20 @@
 import "../styles/result.css";
 
 function formatTime(seconds = 0) {
-  const minutes = Math.floor(seconds / 60)
+  const safeSeconds = Math.max(
+    0,
+    Number(seconds || 0)
+  );
+
+  const minutes = Math.floor(
+    safeSeconds / 60
+  )
     .toString()
     .padStart(2, "0");
 
-  const remainingSeconds = (seconds % 60)
+  const remainingSeconds = Math.floor(
+    safeSeconds % 60
+  )
     .toString()
     .padStart(2, "0");
 
@@ -18,41 +27,79 @@ function ResultPage({
   result,
   onLeaderboard,
 }) {
+  /*
+   * No result available
+   */
   if (!result) {
     return (
       <div className="result-empty">
-        <h2>No result available</h2>
+
+        <h2>
+          No result available
+        </h2>
+
         <p>
           Complete the quiz to view your result.
         </p>
+
       </div>
     );
   }
 
+  /*
+   * Result data
+   */
   const {
     participantName,
-    participantId,
     score,
     totalQuestions,
     elapsedSeconds,
   } = result;
 
+  /*
+   * Safe values
+   */
+  const safeScore = Math.max(
+    0,
+    Number(score || 0)
+  );
+
+  const safeTotalQuestions = Math.max(
+    0,
+    Number(totalQuestions || 0)
+  );
+
+  /*
+   * Percentage
+   */
   const percentage =
-    totalQuestions > 0
+    safeTotalQuestions > 0
       ? Math.round(
-          (score / totalQuestions) * 100
+          (safeScore /
+            safeTotalQuestions) *
+            100
         )
       : 0;
 
+  /*
+   * Performance message
+   */
   let message;
 
-  if (score === totalQuestions) {
+  if (
+    safeScore ===
+    safeTotalQuestions
+  ) {
     message =
       "Perfect score! Excellent Bible knowledge. 🔥";
-  } else if (percentage >= 80) {
+  } else if (
+    percentage >= 80
+  ) {
     message =
       "Excellent work! Keep growing in the Word. 📖";
-  } else if (percentage >= 60) {
+  } else if (
+    percentage >= 60
+  ) {
     message =
       "Good job! Keep learning and improving.";
   } else {
@@ -63,7 +110,9 @@ function ResultPage({
   return (
     <section className="result-page">
 
-      {/* Success Header */}
+      {/* =================================================
+          SUCCESS HEADER
+      ================================================= */}
 
       <div className="result-success-icon">
         ✓
@@ -78,15 +127,13 @@ function ResultPage({
       </h1>
 
       <p className="result-name">
-        {participantName}
+        {participantName ||
+          "Participant"}
       </p>
 
-      <div className="result-id">
-        Participant ID:{" "}
-        <strong>{participantId}</strong>
-      </div>
-
-      {/* Score */}
+      {/* =================================================
+          SCORE CARD
+      ================================================= */}
 
       <div className="result-score-card">
 
@@ -95,9 +142,10 @@ function ResultPage({
         </span>
 
         <strong>
-          {score}
+          {safeScore}
+
           <small>
-            /{totalQuestions}
+            /{safeTotalQuestions}
           </small>
         </strong>
 
@@ -107,66 +155,100 @@ function ResultPage({
 
       </div>
 
-      {/* Stats */}
+      {/* =================================================
+          RESULT STATISTICS
+      ================================================= */}
 
       <div className="result-stat-grid">
 
         <div className="result-stat">
-          <span>Correct Answers</span>
+
+          <span>
+            Correct Answers
+          </span>
+
           <strong>
-            {score}
+            {safeScore}
           </strong>
+
         </div>
 
         <div className="result-stat">
-          <span>Total Questions</span>
+
+          <span>
+            Total Questions
+          </span>
+
           <strong>
-            {totalQuestions}
+            {safeTotalQuestions}
           </strong>
+
         </div>
 
         <div className="result-stat">
-          <span>Completion Time</span>
+
+          <span>
+            Completion Time
+          </span>
+
           <strong>
-            {formatTime(elapsedSeconds)}
+            {formatTime(
+              elapsedSeconds
+            )}
           </strong>
+
         </div>
 
         <div className="result-stat">
-          <span>Accuracy</span>
+
+          <span>
+            Accuracy
+          </span>
+
           <strong>
             {percentage}%
           </strong>
+
         </div>
 
       </div>
 
-      {/* Message */}
+      {/* =================================================
+          PERFORMANCE MESSAGE
+      ================================================= */}
 
       <div className="result-message">
         {message}
       </div>
 
-      {/* Locked */}
+      {/* =================================================
+          SUBMISSION LOCK
+      ================================================= */}
 
       <div className="result-lock">
 
-        <span>🔒</span>
+        <span>
+          🔒
+        </span>
 
         <div>
+
           <strong>
             Submission Locked
           </strong>
 
           <p>
             You cannot submit this quiz again
-            with this Participant ID on this device.
+            on this device.
           </p>
+
         </div>
 
       </div>
 
-      {/* Leaderboard */}
+      {/* =================================================
+          LEADERBOARD
+      ================================================= */}
 
       <button
         type="button"
@@ -175,6 +257,10 @@ function ResultPage({
       >
         View Leaderboard →
       </button>
+
+      {/* =================================================
+          FOOTER NOTE
+      ================================================= */}
 
       <p className="result-note">
         Thank you for participating in the Bible Quiz.

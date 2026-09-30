@@ -69,7 +69,7 @@ function Home({
         <div className="event-info-card">
           <span className="info-icon">📖</span>
           <div>
-            <strong>25 Questions</strong>
+            <strong>30 Questions</strong>
             <small>Test your Bible knowledge</small>
           </div>
         </div>
@@ -77,7 +77,7 @@ function Home({
         <div className="event-info-card">
           <span className="info-icon">🏆</span>
           <div>
-            <strong>25 Marks</strong>
+            <strong>30 Marks</strong>
             <small>1 mark for each answer</small>
           </div>
         </div>
